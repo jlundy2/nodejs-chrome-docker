@@ -13,5 +13,6 @@ jobs:
       uses: docker/build-push-action@v1.1.0
       with:
         repository: jlundy2/nodejs-chrome
-        # Comma-delimited list of tags. These will be added to the registry/repository to form the image's tags
-        tags: true
+        username: ${{ secrets.DOCKERHUB_USERNAME}}
+        password: ${{ secrets.DOCKERHUB_PASSWORD }}
+        tag_with_ref: true
